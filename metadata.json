@@ -1,0 +1,6 @@
+{
+  "name": "ХУРД CUP-2026",
+  "description": "“ХУРД ГРУПП” ХХК-ИЙН НЭРЭМЖИТ САГСАН БӨМБӨГИЙН ШИЛЖИН ЯВАХ ЦОМЫН ТӨЛӨӨХ “ХУРД CUP-2026” ТЭМЦЭЭНИЙ УДИРДАМЖ",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
