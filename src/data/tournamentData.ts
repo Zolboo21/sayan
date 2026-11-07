@@ -3,6 +3,11 @@
  * “ХУРД CUP-2026” ТЭМЦЭЭНИЙ УДИРДАМЖ
  */
 
+import khurdLogoImg from '../assets/images/khurd_logo.png';
+import sayanShintseLogoImg from '../assets/images/sayan_shintse_logo.png';
+import actualCourtPhotoImg from '../assets/images/actual_court.png';
+import trophyPhotoImg from '../assets/images/championship_trophy_cup.jpg';
+
 export interface PrizeItem {
   place: string;
   award: string;
@@ -15,6 +20,17 @@ export const TOURNAMENT_DATA = {
   titleKicker: "“ХУРД ГРУПП” ХХК-ИЙН НЭРЭМЖИТ САГСАН БӨМБӨГИЙН ШИЛЖИН ЯВАХ ЦОМЫН ТӨЛӨӨХ",
   tournamentTitle: "“ХУРД CUP-2026” ТЭМЦЭЭНИЙ УДИРДАМЖ",
   shortTitle: "ХУРД CUP-2026",
+
+  assets: {
+    khurdLogo: khurdLogoImg,
+    sayanShintseLogo: sayanShintseLogoImg,
+    actualCourtPhoto: actualCourtPhotoImg,
+    trophyPhoto: trophyPhotoImg,
+    fallbackKhurd: "/assets/images/khurd_logo.png",
+    fallbackSayan: "/assets/images/sayan_shintse_logo.png",
+    fallbackCourt: "/assets/images/actual_court.png",
+    fallbackTrophy: "/assets/images/championship_trophy_cup.jpg",
+  },
 
   section1: {
     num: "Нэг",

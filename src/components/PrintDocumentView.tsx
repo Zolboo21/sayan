@@ -40,9 +40,27 @@ export const PrintDocumentView: React.FC<PrintDocumentViewProps> = ({ onClose })
 
         {/* Printable Document Body */}
         <div className="space-y-8 font-sans text-sm sm:text-base leading-relaxed text-slate-900">
-          {/* Header Approval */}
-          <div className="flex justify-end text-right font-serif">
-            <div className="max-w-xs border-b border-slate-400 pb-2">
+          {/* Header Approval & Logos */}
+          <div className="flex items-center justify-between border-b border-slate-300 pb-4">
+            <div className="flex items-center gap-3">
+              <img
+                src={TOURNAMENT_DATA.assets.sayanShintseLogo}
+                alt="Саян Шинцэ ХХК"
+                className="h-12 w-auto object-contain"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = TOURNAMENT_DATA.assets.fallbackSayan;
+                }}
+              />
+              <img
+                src={TOURNAMENT_DATA.assets.khurdLogo}
+                alt="ХУРД ГРУПП"
+                className="h-10 w-auto object-contain"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = TOURNAMENT_DATA.assets.fallbackKhurd;
+                }}
+              />
+            </div>
+            <div className="text-right font-serif max-w-xs">
               <p className="font-bold text-xs uppercase tracking-wider">
                 {TOURNAMENT_DATA.approval}
               </p>

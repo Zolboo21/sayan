@@ -29,10 +29,12 @@ export const PrizeSection: React.FC = () => {
             {/* Left image column */}
             <div className="lg:col-span-5 relative aspect-[4/3] lg:aspect-auto lg:h-full min-h-[300px] overflow-hidden bg-slate-950">
               <img
-                src="/src/assets/images/championship_trophy_cup_1794050956605.jpg"
+                src={TOURNAMENT_DATA.assets.trophyPhoto}
                 alt="ШИЛЖИН ЯВАХ ЦОМ - ХУРД CUP-2026"
-                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = TOURNAMENT_DATA.assets.fallbackTrophy;
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-transparent to-slate-900/90" />
             </div>

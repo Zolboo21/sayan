@@ -6,6 +6,8 @@ import {
   validateBasketballRoster,
   validatePlayerEligibility,
   getMatchDuration,
+  getAllSports,
+  getSportInfo,
   BASE_REGISTRATION_FEE,
   ADDITIONAL_TEAM_FEE
 } from './tournamentRules.ts';
@@ -76,3 +78,13 @@ test('getMatchDuration returns correct minutes and clock type', () => {
     timeType: 'цэвэр цаг'
   });
 });
+
+test('getAllSports returns exactly basketball, darts, and tennis equally', () => {
+  const sports = getAllSports();
+  assert.equal(sports.length, 3);
+  const ids = sports.map(s => s.id);
+  assert.ok(ids.includes('basketball'));
+  assert.ok(ids.includes('darts'));
+  assert.ok(ids.includes('tennis'));
+});
+

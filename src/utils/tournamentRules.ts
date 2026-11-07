@@ -72,3 +72,54 @@ export function getMatchDuration(isFinal: boolean, gender: 'male' | 'female'): {
     timeType: 'бохир цаг'
   };
 }
+
+export type SportType = 'basketball' | 'darts' | 'tennis';
+
+export interface SportInfo {
+  id: SportType;
+  name: string;
+  iconName: string;
+  participantsRule: string;
+  formatRule: string;
+  awardsSummary: string;
+  ruleSectionRef: string;
+}
+
+export const TOURNAMENT_SPORTS: Record<SportType, SportInfo> = {
+  basketball: {
+    id: 'basketball',
+    name: 'Сагсан бөмбөг',
+    iconName: 'Trophy',
+    participantsRule: 'Эрэгтэй эмэгтэй баг тус бүр 7-8 хүний бүрэлдэхүүнтэй',
+    formatRule: 'Зоо: эрэгтэй-7 мин, эмэгтэй-6 мин (бохир). Финал: эрэгтэй-8 мин, эмэгтэй-7 мин (цэвэр)',
+    awardsSummary: 'Тэргүүн, Дэд, Гуравдугаар байр (Алтан, Мөнгөн, Хүрэл медаль) + Үнэ цэнтэй тоглогч (Цом)',
+    ruleSectionRef: '4.2 & 5.1, 5.3'
+  },
+  darts: {
+    id: 'darts',
+    name: 'Дартс',
+    iconName: 'Target',
+    participantsRule: 'Байгууллага тус бүрээс эрэгтэй-1, эмэгтэй-1 тамирчид',
+    formatRule: 'Оролцох тамирчдын тооноос хамааран зоо болон тойргийн системийн аль нэгээр',
+    awardsSummary: 'Тэргүүн, Дэд, Гуравдугаар байр (Алтан, Мөнгөн, Хүрэл медаль, өргөмжлөл, мөнгөн шагнал)',
+    ruleSectionRef: '4.3.1, 4.3.2 & 5.4'
+  },
+  tennis: {
+    id: 'tennis',
+    name: 'Ширээний теннис',
+    iconName: 'Activity',
+    participantsRule: 'Компани удирдлагууд оролцоно',
+    formatRule: 'Компанийн удирдах түвшний албан тушаалтнуудын ганцаарчилсан болон холимог ангилал',
+    awardsSummary: 'Тэмцээний нийлбэр дүнг бага онооны системээр тооцоход хамаарна',
+    ruleSectionRef: '4.3.3 & 5.6'
+  }
+};
+
+export function getSportInfo(sport: SportType): SportInfo {
+  return TOURNAMENT_SPORTS[sport];
+}
+
+export function getAllSports(): SportInfo[] {
+  return Object.values(TOURNAMENT_SPORTS);
+}
+
